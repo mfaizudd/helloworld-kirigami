@@ -7,6 +7,18 @@ Kirigami.ApplicationWindow {
     id: root
     title: i18nc("@title", "Hello World")
 
+    globalDrawer: Kirigami.GlobalDrawer {
+        isMenu: true
+        actions: [
+            Kirigami.Action {
+                text: i18n("Quit")
+                icon.name: "gtk-quit"
+                shortcut: StandardKey.Quit
+                onTriggered: Qt.quit()
+            }
+        ]
+    }
+
     pageStack.initialPage: Kirigami.ScrollablePage {
         title: i18nc("@title", "Kountdown")
 
